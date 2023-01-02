@@ -6,6 +6,7 @@
 #define SUCCESS   (0)
 #define ENOMEM    (-1)
 #define EEMPTY    (-2)
+#define ENOTMID   (-3)
 
 
 /* DATA STRUCTURES */
@@ -235,6 +236,23 @@ int list_remove_tail(list_t *l)
     return SUCCESS;
 }
 
+/*
+ * Remove an intermediate node (i.e., not the head
+ * or tail of the list) from the list.
+ *
+ * Parameters:
+ *  - node: The node to remove
+ *
+ * Returns:
+ *  - 0 on success.
+ *  - ENOTMID: If the node is not an intermediate node
+ */
+int list_remove_intermediate_node(list_node_t *node)
+{
+    /* Your code here */
+
+    return SUCCESS;
+}
 
 int main()
 {
@@ -247,6 +265,10 @@ int main()
     list_insert_tail(&lst, 30);
     list_insert_tail(&lst, 40);
 
+    list_print(&lst);
+
+    list_node_t *third_node = lst.head->next->next;
+    list_remove_intermediate_node(third_node);
     list_print(&lst);
 
     list_free(&lst);

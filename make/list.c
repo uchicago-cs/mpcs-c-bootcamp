@@ -4,7 +4,7 @@
 
 
 /* See list.h */
-int list_init(list_t *l)
+int list_init (list_t *l)
 {
     l->head = NULL;
     l->tail = NULL;
@@ -17,8 +17,7 @@ int list_init(list_t *l)
 int list_free(list_t *l)
 {
     list_node_t *pn = l->head;
-    while(pn != NULL)
-    {
+    while(pn != NULL) {
         list_node_t *next = pn->next;
         free(pn);
         pn = next;
@@ -31,12 +30,9 @@ int list_free(list_t *l)
 /* See list.h */
 int list_print(list_t *l)
 {
-    if(l->head == NULL)
-    {
+    if (l->head == NULL) {
         printf("EMPTY LIST\n");
-    }
-    else
-    {
+    } else {
         list_node_t *pn = l->head;
         while (pn != NULL) {
             printf("%i ", pn->value);
@@ -49,11 +45,12 @@ int list_print(list_t *l)
 
 
 /* See list.h */
-int list_insert_head(list_t *l, int n)
+int list_insert_head (list_t *l, int n)
 {
     list_node_t *node = calloc(1, sizeof(list_node_t));
-    if(node == NULL)
+    if (node == NULL) {
         return ENOMEM;
+    }
 
     /* Set values in node */
     node->value = n;
@@ -62,15 +59,17 @@ int list_insert_head(list_t *l, int n)
 
     /* If the list is non-empty, update the prev pointer
      * of the head node */
-    if(l->head != NULL)
+    if (l->head != NULL) {
         l->head->prev = node;
+    }
 
     /* Update list values */
 
     /* If this is the first node we insert, we need to update
      * the tail pointer too */
-    if(l->tail == NULL)
+    if (l->tail == NULL) {
         l->tail = node;
+    }
     l->head = node;
 
     return SUCCESS;
@@ -78,11 +77,12 @@ int list_insert_head(list_t *l, int n)
 
 
 /* See list.h */
-int list_insert_tail(list_t *l, int n)
+int list_insert_tail (list_t *l, int n)
 {
     list_node_t *node = calloc(1, sizeof(list_node_t));
-    if(node == NULL)
+    if (node == NULL) {
         return ENOMEM;
+    }
 
     /* Set values in node */
     node->value = n;
@@ -91,15 +91,17 @@ int list_insert_tail(list_t *l, int n)
 
     /* If the list is non-empty, update the next pointer
      * of the tail node */
-    if(l->tail != NULL)
+    if (l->tail != NULL) {
         l->tail->next = node;
+    }
 
     /* Update list values */
 
     /* If this is the first node we insert, we need to update
      * the head pointer too */
-    if(l->head == NULL)
+    if (l->head == NULL) {
         l->head = node;
+    }
     l->tail = node;
 
     return SUCCESS;
@@ -107,38 +109,42 @@ int list_insert_tail(list_t *l, int n)
 
 
 /* See list.h */
-int list_remove_head(list_t *l)
+int list_remove_head (list_t *l)
 {
-    if(l->head == NULL)
+    if (l->head == NULL) {
         return EEMPTY;
+    }
 
     /* Remove head node */
     list_node_t *node = l->head;
     l->head = node->next;
-    free(node);
-    if(l->head != NULL)
+    free (node);
+    if (l->head != NULL) {
         l->head->prev = NULL;
-    else
+    } else {
         l->tail = NULL;
+    }
 
     return SUCCESS;
 }
 
 
 /* See list.h */
-int list_remove_tail(list_t *l)
+int list_remove_tail (list_t *l)
 {
-    if(l->head == NULL)
+    if (l->head == NULL) {
         return EEMPTY;
+    }
 
     /* Remove tail node */
     list_node_t *node = l->tail;
     l->tail = node->prev;
-    free(node);
-    if(l->tail != NULL)
+    free (node);
+    if (l->tail != NULL) {
         l->tail->next = NULL;
-    else
+    } else {
         l->head = NULL;
+    }
 
     return SUCCESS;
 }

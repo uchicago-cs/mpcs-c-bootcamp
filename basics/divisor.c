@@ -6,16 +6,15 @@
 
 #include <stdio.h>
 
-int main()
+int main ()
 {
-    int n=21;
-    for(int i=2; i<n; i++)
-    {
-        printf("Checking %i...\n", i);	
-        if(n%i == 0)
-        {
-            printf("%i is a divisor of %i\n", i, n);
+    int n = 21;
+
+    for (int i = 2; i < n; ++i) {
+        printf ("Checking %d...\n", i);
+        if ((n % i) == 0) {
+            printf ("%d is a divisor of %d\n", i, n);
             break;
-        }	
+        }
     }
 }

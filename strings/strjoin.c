@@ -1,8 +1,8 @@
 /*
  * MPCS C Bootcamp
  *
- * Exercise: Implement a function that takes two strings and 
- * produces a new string containing the concatenation of s1 
+ * Exercise: Implement a function that takes two strings and
+ * produces a new string containing the concatenation of s1
  * followed by s2 (the return value is that new string)
  */
 
@@ -10,12 +10,12 @@
 #include <string.h>
 
 
-char* strjoin(char *s1, char *s2)
+char *strjoin (char *s1, char *s2)
 {
-	/* Your code goes here */
+    /* Your code goes here */
 
-    /* Replace NULL with the appropriate return value*/
-	return NULL;
+    /* Replace NULL with the appropriate return value */
+    return NULL;
 }
 
 
@@ -25,8 +25,8 @@ int main()
     char *s2 = "ghijklmnop";
     char *d;
 
-    d = strjoin(s1, s2);
+    d = strjoin (s1, s2);
 
-    printf("s1 + s2 = %s\n", d);
-    printf("len(s1 + s2) = %li\n", strlen(d));
+    printf ("s1 + s2 = %s\n", d);
+    printf ("len(s1 + s2) = %ld\n", strlen(d));
 }

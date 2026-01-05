@@ -7,16 +7,15 @@
 #include <stdio.h>
 
 
-int len(char *s)
+int len (char *s)
 {
-	int i = 0;
+    int i = 0;
 
-	while (s[i] != '\0')
-	{
-		i++;
-	}
+    while (s[i] != '\0') {
+        i++;
+    }
 
-	return i;
+    return i;
 }
 
 
@@ -30,5 +29,5 @@ int main()
     s[4] = 'o';
     s[5] = '\0'; // <- Removing this could cause a segfault
 
-    printf("len=%i\n", len(s));
+    printf("len=%d\n", len(s));
 }

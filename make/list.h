@@ -49,7 +49,7 @@ typedef struct list {
  *  - 0 on success
  *  - ENOMEM: If there was insufficient memory
  */
-int list_init(list_t *l);
+int list_init (list_t *l);
 
 /*
  * Frees resources associated with a graph
@@ -60,7 +60,7 @@ int list_init(list_t *l);
  * Returns:
  *  - Always returns 0
  */
-int list_free(list_t *l);
+int list_free (list_t *l);
 
 /*
  * Prints the contents of a list
@@ -72,7 +72,7 @@ int list_free(list_t *l);
  * Returns:
  *  - Always returns 0
  */
-int list_print(list_t *l);
+int list_print (list_t *l);
 
 /*
  * Inserts a value at the head of the list
@@ -85,7 +85,7 @@ int list_print(list_t *l);
  *  - 0 on success
  *  - ENOMEM: If there was insufficient memory
  */
-int list_insert_head(list_t *l, int n);
+int list_insert_head (list_t *l, int n);
 
 /*
  * Inserts a value at the tail of the list
@@ -98,7 +98,7 @@ int list_insert_head(list_t *l, int n);
  *  - 0 on success
  *  - ENOMEM: If there was insufficient memory
  */
-int list_insert_tail(list_t *l, int n);
+int list_insert_tail (list_t *l, int n);
 
 /*
  * Remove the node at the head of the list.
@@ -110,7 +110,7 @@ int list_insert_tail(list_t *l, int n);
  *  - 0 on success.
  *  - EEMPTY: If the list was empty (nothing to return)
  */
-int list_remove_head(list_t *l);
+int list_remove_head (list_t *l);
 
 /*
  * Remove the node at the tail of the list
@@ -122,6 +122,6 @@ int list_remove_head(list_t *l);
  *  - 0 on success.
  *  - EEMPTY: If the list was empty (nothing to return)
  */
-int list_remove_tail(list_t *l);
+int list_remove_tail (list_t *l);
 
 #endif

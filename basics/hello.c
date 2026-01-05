@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 
-int main()
+int main ()
 {
-    printf("Hello, world!\n");
+    printf ("Hello, world!\n");
 }

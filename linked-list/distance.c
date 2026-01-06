@@ -24,7 +24,7 @@ int main ()
     p2.x = 1.0;
     p2.y = 1.0;
 
-    float dist = distance(&p1, &p2);
+    float dist = distance (&p1, &p2);
 
-    printf("The distance is %.4f\n", dist);
+    printf ("The distance is %.4f\n", dist);
 }
